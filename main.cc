@@ -6,15 +6,15 @@ std::vector<std::string> LeerFichero(std::fstream& Entrada) {
   std::string linea;
   std::vector<std::string> conjunto;
   std::string caracter;
-  while (linea.back() != '}') {
+   while (linea.back() != '}') {
     Entrada >> linea;
     if (linea.front() == '{') {
       linea.erase(0, 1);
     }
-    caracter = linea;
-    caracter.erase(caracter.size() - 1, 1);
-    conjunto.push_back(caracter);
-  }
+     caracter = linea;
+     caracter.erase(caracter.size() - 1, 1);
+     conjunto.push_back(caracter);
+   }
   return conjunto;
 }
 // Metodo para crear la instancia de Set, basandose en
@@ -94,21 +94,22 @@ int main(int arcg, char* argv[]) {
           } else {
             GuardarResultado(set1, set2, operador, (set1 == set2), output);
           }
-        } else {
-          if (cara == '!') {
+        } 
+        if (cara == '!') {
             operador = caracter;
             OperarConjuntos(input, set1);
             set2 = !set1;
             GuardarResultado(set1, set2, operador, output);
-          }
         }
+        
         set1.Clean();set2.Clean();set3.Clean();
       }
     } else {
       std::cout << "Error al abrir los ficheros" << std::endl;
     }
   } else {
-    std::cout << "Error, No se han especificado los argumentos correctamente"
-              << std::endl;
+    std::cout << "This program is a set calculator, which supports operations between sets of characters."<<std::endl;
+    std::cout<<"It requires two parameters indicating the names for the input and output files."<<std::endl;
+    std::cout<<" Usage: ./set_calculator input.txt output.txt"<< std::endl;
   }
 }

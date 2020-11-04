@@ -1,15 +1,16 @@
-#ifndef SET_H
-#define SET_H
-#include <vector>
-#include <iostream>
-#include <fstream>
-
 /**
  * Enrique Manuel Pedroza Castillo
  * Alu0100886351
  * Clase set, que guarda conjunto de numeros permitiendo aplicar sobre los mismos operaciones de 
  * union, diferencia, interseccion y complementacion
 */
+
+#include <vector>
+#include <iostream>
+#include <fstream>
+#ifndef SET_H
+#define SET_H
+
 class Set {
  public:
   Set();    // constructor por defecto
